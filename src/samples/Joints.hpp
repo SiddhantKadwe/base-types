@@ -4,9 +4,9 @@
 #include <stdexcept>
 #include <vector>
 
-#include <base/Time.hpp>
-#include <base/JointState.hpp>
-#include <base/NamedVector.hpp>
+#include <Time.hpp>
+#include <JointState.hpp>
+#include <NamedVector.hpp>
 
 namespace base
 {

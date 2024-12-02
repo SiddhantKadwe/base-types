@@ -1,7 +1,7 @@
 #ifndef BASE_ACCELERATION_HPP
 #define BASE_ACCELERATION_HPP
 
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 
 namespace base {
 

@@ -1,8 +1,8 @@
 #ifndef __BASE_SAMPLES_TEMPERATURE_HH__
 #define __BASE_SAMPLES_TEMPERATURE_HH__
 
-#include <base/Temperature.hpp>
-#include <base/Time.hpp>
+#include <Temperature.hpp>
+#include <Time.hpp>
 
 namespace base
 {

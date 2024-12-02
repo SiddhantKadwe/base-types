@@ -2,13 +2,13 @@
 #define __BASE_SAMPLES_SONAR_HPP__
 
 #include <vector>
-#include <base/Float.hpp>
-#include <base/Time.hpp>
-#include <base/Angle.hpp>
-#include <base/Deprecated.hpp>
+#include <Float.hpp>
+#include <Time.hpp>
+#include <Angle.hpp>
+#include <Deprecated.hpp>
 BASE_TYPES_DEPRECATED_SUPPRESS_START
-#include <base/samples/SonarBeam.hpp>
-#include <base/samples/SonarScan.hpp>
+#include <samples/SonarBeam.hpp>
+#include <samples/SonarScan.hpp>
 BASE_TYPES_DEPRECATED_SUPPRESS_STOP
 
 namespace base { namespace samples {

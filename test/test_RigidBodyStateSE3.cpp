@@ -1,5 +1,5 @@
 #include <boost/test/unit_test.hpp>
-#include <base/samples/RigidBodyStateSE3.hpp>
+#include <samples/RigidBodyStateSE3.hpp>
 
 using namespace std;
 using namespace base;

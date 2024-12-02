@@ -1,5 +1,5 @@
 #include "viz/DepthMapVisualization.hpp"
-#include "base/samples/DepthMap.hpp"
+#include "samples/DepthMap.hpp"
 #include <vizkit3d/Vizkit3DWidget.hpp>
 #include <vizkit3d/QtThreadedWidget.hpp>
 

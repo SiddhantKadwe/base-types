@@ -1,5 +1,5 @@
 #include <boost/test/unit_test.hpp>
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 #include <iostream>
 #include "../src/TwistWithCovariance.cpp"
 

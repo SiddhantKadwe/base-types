@@ -1,9 +1,9 @@
 #ifndef __BASE_SAMPLES_PRESSURE_HPP
 #define __BASE_SAMPLES_PRESSURE_HPP
 
-#include <base/Pressure.hpp>
-#include <base/Time.hpp>
-#include <base/Float.hpp>
+#include <Pressure.hpp>
+#include <Time.hpp>
+#include <Float.hpp>
 
 namespace base
 {

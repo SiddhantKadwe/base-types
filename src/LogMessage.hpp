@@ -2,7 +2,7 @@
 #define WORKSPACE_BASE_TYPES_SRC_LOGMESSAGE_HPP_
 
 #include <string>
-#include <base/Time.hpp>
+#include <Time.hpp>
 
 namespace base {
 

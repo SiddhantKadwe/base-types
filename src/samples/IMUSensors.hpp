@@ -1,8 +1,8 @@
 #ifndef BASE_SAMPLES_IMU_SENSORS_H__
 #define BASE_SAMPLES_IMU_SENSORS_H__
 
-#include <base/Time.hpp>
-#include <base/Eigen.hpp>
+#include <Time.hpp>
+#include <Eigen.hpp>
 
 namespace base { namespace samples {
     struct IMUSensors

@@ -5,8 +5,8 @@
 #include <osg/LineWidth>
 #include <deque>
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/geometry/Spline.hpp>
-#include <base/Trajectory.hpp>
+#include <geometry/Spline.hpp>
+#include <Trajectory.hpp>
 
 namespace vizkit3d
 {

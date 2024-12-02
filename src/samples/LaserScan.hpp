@@ -3,10 +3,10 @@
 
 #include <vector>
 #include <Eigen/Geometry>
-#include <base/Float.hpp>
+#include <Float.hpp>
 #include <boost/cstdint.hpp>
-#include <base/Time.hpp>
-#include <base/Deprecated.hpp>
+#include <Time.hpp>
+#include <Deprecated.hpp>
 
 namespace base { namespace samples {
     /** Special values for the ranges. If a range has one of these values, then

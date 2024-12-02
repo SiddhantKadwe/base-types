@@ -4,9 +4,9 @@
 #include <vector>
 #include <Eigen/Geometry>
 
-#include <base/Angle.hpp>
-#include <base/Time.hpp>
-#include <base-logging/Singleton.hpp>
+#include <Angle.hpp>
+#include <Time.hpp>
+#include <base-logging/logging/Singleton.hpp>
 
 #include <stdexcept>
 

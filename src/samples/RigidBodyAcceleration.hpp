@@ -1,8 +1,8 @@
 #ifndef __BASE_SAMPLES_RIGID_BODY_ACCELERATION_HH
 #define __BASE_SAMPLES_RIGID_BODY_ACCELERATION_HH
 
-#include <base/Eigen.hpp>
-#include <base/Time.hpp>
+#include <Eigen.hpp>
+#include <Time.hpp>
 
 namespace base { namespace samples {
     /**

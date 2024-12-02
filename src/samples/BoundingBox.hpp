@@ -2,9 +2,9 @@
 #ifndef BASE_SAMPLES_BOUNDINGBOX_HPP_
 #define BASE_SAMPLES_BOUNDINGBOX_HPP_
 
-#include <base/Eigen.hpp>
-#include <base/Float.hpp>
-#include <base/Time.hpp>
+#include <Eigen.hpp>
+#include <Float.hpp>
+#include <Time.hpp>
 
 namespace base {
 namespace samples {

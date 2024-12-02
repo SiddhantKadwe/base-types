@@ -1,7 +1,7 @@
 #ifndef __TRAJECTORY_HH__
 #define __TRAJECTORY_HH__
 
-#include <base/geometry/Spline.hpp>
+#include <geometry/Spline.hpp>
 
 namespace base
 {

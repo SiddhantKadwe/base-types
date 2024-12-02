@@ -1,7 +1,7 @@
 #ifndef BASE_COMMANDS_JOINTS_HPP
 #define BASE_COMMANDS_JOINTS_HPP
 
-#include <base/samples/Joints.hpp>
+#include <samples/Joints.hpp>
 
 namespace base
 {

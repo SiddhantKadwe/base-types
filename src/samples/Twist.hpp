@@ -1,8 +1,8 @@
 #ifndef BASE_SAMPLES_TWIST_HPP
 #define BASE_SAMPLES_TWIST_HPP
 
-#include <base/Time.hpp>
-#include <base/Twist.hpp>
+#include <Time.hpp>
+#include <Twist.hpp>
 
 namespace base { namespace samples {
 

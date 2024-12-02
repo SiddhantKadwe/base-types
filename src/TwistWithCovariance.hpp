@@ -1,7 +1,7 @@
 #ifndef __BASE_TWIST_WITH_COVARIANCE_HPP__
 #define __BASE_TWIST_WITH_COVARIANCE_HPP__
 
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 
 namespace base {
 

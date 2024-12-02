@@ -3,7 +3,7 @@
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
 #include <Eigen/Geometry>
-#include <base/samples/RigidBodyState.hpp>
+#include <samples/RigidBodyState.hpp>
 #include <osg/Shape>
 
 namespace vizkit3d 

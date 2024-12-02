@@ -1,5 +1,5 @@
 #include <boost/test/unit_test.hpp>
-#include <base/samples/Sonar.hpp>
+#include <samples/Sonar.hpp>
 
 using namespace base;
 using namespace base::samples;

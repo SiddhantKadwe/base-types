@@ -1,6 +1,6 @@
 #include <boost/test/unit_test.hpp>
-#include <base/Time.hpp>
-#include <base/Timeout.hpp>
+#include <Time.hpp>
+#include <Timeout.hpp>
 #include <limits>
 
 using namespace base;

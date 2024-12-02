@@ -1,8 +1,8 @@
 #ifndef MOTIONCOMMANDVISUALIZATION_H
 #define MOTIONCOMMANDVISUALIZATION_H
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/commands/Motion2D.hpp>
-#include <base/Pose.hpp>
+#include <commands/Motion2D.hpp>
+#include <Pose.hpp>
 #include <osg/Shape>
 #include <Eigen/Geometry>
 #include <osg/Drawable>

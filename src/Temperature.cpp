@@ -1,7 +1,7 @@
 #include "Temperature.hpp"
 
 #include <boost/format.hpp>
-#include <base/Float.hpp>
+#include <Float.hpp>
 
 using namespace std;
 using namespace base;

@@ -2,8 +2,8 @@
 #define SonarBeamVisualization_H
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/samples/SonarScan.hpp>
-#include <base/samples/RigidBodyState.hpp>
+#include <samples/SonarScan.hpp>
+#include <samples/RigidBodyState.hpp>
 
 #include <osg/Node>
 #include <osg/Geometry>

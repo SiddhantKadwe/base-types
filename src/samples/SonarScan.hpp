@@ -5,9 +5,9 @@
 #ifndef BASE_SAMPLES_SONARSCAN_H__
 #define BASE_SAMPLES_SONARSCAN_H__
 
-#include <base/Time.hpp>
-#include <base/Angle.hpp>
-#include <base/samples/SonarBeam.hpp>
+#include <Time.hpp>
+#include <Angle.hpp>
+#include <samples/SonarBeam.hpp>
 
 namespace base { namespace samples { 
 

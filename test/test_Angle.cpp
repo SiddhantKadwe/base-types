@@ -1,5 +1,5 @@
 #include <boost/test/unit_test.hpp>
-#include <base/Angle.hpp>
+#include <Angle.hpp>
 #include <sstream>
 
 using namespace std;

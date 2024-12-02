@@ -2,9 +2,9 @@
 #define BASE_SAMPLES_POSE_WITH_COVARIANCE_HPP
 
 #include <string>
-#include <base/Time.hpp>
-#include <base/TransformWithCovariance.hpp>
-#include <base/samples/RigidBodyState.hpp>
+#include <Time.hpp>
+#include <TransformWithCovariance.hpp>
+#include <samples/RigidBodyState.hpp>
 
 namespace base { namespace samples {
 

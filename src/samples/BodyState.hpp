@@ -1,11 +1,11 @@
 #ifndef __BASE_SAMPLES_BODY_STATE_HH
 #define __BASE_SAMPLES_BODY_STATE_HH
 
-#include <base/Time.hpp>
-#include <base/Float.hpp>
-#include <base/TransformWithCovariance.hpp>
-#include <base/TwistWithCovariance.hpp>
-#include <base/samples/RigidBodyState.hpp> /** For backward compatibility with RBS **/
+#include <Time.hpp>
+#include <Float.hpp>
+#include <TransformWithCovariance.hpp>
+#include <TwistWithCovariance.hpp>
+#include <samples/RigidBodyState.hpp> /** For backward compatibility with RBS **/
 
 namespace base { namespace samples {
 

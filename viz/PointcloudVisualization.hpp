@@ -2,7 +2,7 @@
 #define PointcloudVisualization_H
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/samples/Pointcloud.hpp>
+#include <samples/Pointcloud.hpp>
 
 #include <osg/Node>
 #include <osg/Geometry>

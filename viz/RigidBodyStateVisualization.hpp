@@ -3,8 +3,8 @@
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
 #include <Eigen/Geometry>
-#include <base/samples/RigidBodyState.hpp>
-#include <base/TransformWithCovariance.hpp>
+#include <samples/RigidBodyState.hpp>
+#include <TransformWithCovariance.hpp>
 
 #include <osg/Image>
 #include <osg/Texture2D>

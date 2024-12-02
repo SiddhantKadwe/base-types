@@ -2,8 +2,8 @@
 #define BASE_SAMPLES_SONARBEAM_H__
 
 #include <boost/cstdint.hpp>
-#include <base/Time.hpp>
-#include <base/Angle.hpp>
+#include <Time.hpp>
+#include <Angle.hpp>
 
 namespace base { namespace samples {
 

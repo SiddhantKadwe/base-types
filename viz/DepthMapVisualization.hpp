@@ -3,8 +3,8 @@
 
 #include <boost/noncopyable.hpp>
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/samples/DepthMap.hpp>
-#include <base/samples/RigidBodyState.hpp>
+#include <samples/DepthMap.hpp>
+#include <samples/RigidBodyState.hpp>
 #include <osg/Geode>
 
 namespace vizkit3d

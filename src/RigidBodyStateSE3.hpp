@@ -1,10 +1,10 @@
 #ifndef BASE_RIGID_BODY_STATE_SE3_HPP
 #define BASE_RIGID_BODY_STATE_SE3_HPP
 
-#include <base/Pose.hpp>
-#include <base/Twist.hpp>
-#include <base/Acceleration.hpp>
-#include <base/Wrench.hpp>
+#include <Pose.hpp>
+#include <Twist.hpp>
+#include <Acceleration.hpp>
+#include <Wrench.hpp>
 
 namespace base {
 

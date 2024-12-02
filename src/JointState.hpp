@@ -1,7 +1,7 @@
 #ifndef BASE_JOINT_STATE_HPP
 #define BASE_JOINT_STATE_HPP
 
-#include <base/Float.hpp>
+#include <Float.hpp>
 #include <stdexcept>
 
 namespace base

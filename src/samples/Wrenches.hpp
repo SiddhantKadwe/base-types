@@ -1,9 +1,9 @@
 #ifndef BASE_SAMPLES_WRENCHES_HPP
 #define BASE_SAMPLES_WRENCHES_HPP
 
-#include <base/NamedVector.hpp>
-#include <base/Wrench.hpp>
-#include <base/Time.hpp>
+#include <NamedVector.hpp>
+#include <Wrench.hpp>
+#include <Time.hpp>
 
 namespace base { namespace samples {
 

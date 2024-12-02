@@ -1,6 +1,6 @@
 #include "SonarBeamVisualization.hpp"
 #include <osg/Geode>
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 
 namespace vizkit3d
 {

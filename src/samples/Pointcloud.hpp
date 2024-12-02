@@ -2,8 +2,8 @@
 #define BASE_POINTCLOUD_HPP
 
 #include <vector>
-#include <base/Time.hpp>
-#include <base/Point.hpp>
+#include <Time.hpp>
+#include <Point.hpp>
 
 namespace base {
 

@@ -2,10 +2,10 @@
 #define BASE_JOINT_TRANSFORM_HPP
 
 #include <string>
-#include <base/Eigen.hpp>
-#include <base/NamedVector.hpp>
-#include <base/samples/Joints.hpp>
-#include <base/samples/RigidBodyState.hpp>
+#include <Eigen.hpp>
+#include <NamedVector.hpp>
+#include <samples/Joints.hpp>
+#include <samples/RigidBodyState.hpp>
 
 namespace base
 {

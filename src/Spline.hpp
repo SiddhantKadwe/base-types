@@ -2,7 +2,7 @@
 #define  _BASE_SPLINE_HPP_INC
 
 #include <vector>
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 #include <stdexcept>
 #include <algorithm>
 

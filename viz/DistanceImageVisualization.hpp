@@ -2,7 +2,7 @@
 #define stereo_DistanceImageVisualization_H
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/samples/DistanceImage.hpp>
+#include <samples/DistanceImage.hpp>
 
 #include <boost/noncopyable.hpp>
 #include "PointcloudVisualization.hpp"

@@ -1,8 +1,8 @@
 #ifndef BASE_SAMPLES_RIGID_BODY_STATE_SE3_HPP
 #define BASE_SAMPLES_RIGID_BODY_STATE_SE3_HPP
 
-#include <base/RigidBodyStateSE3.hpp>
-#include <base/Time.hpp>
+#include <RigidBodyStateSE3.hpp>
+#include <Time.hpp>
 
 namespace base{ namespace samples {
 

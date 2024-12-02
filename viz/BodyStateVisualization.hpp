@@ -3,7 +3,7 @@
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
 #include <Eigen/Geometry>
-#include <base/samples/BodyState.hpp>
+#include <samples/BodyState.hpp>
 
 #include <osg/Image>
 #include <osg/Texture2D>

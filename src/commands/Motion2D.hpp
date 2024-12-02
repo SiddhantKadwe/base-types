@@ -1,7 +1,7 @@
 #ifndef BASE_COMMANDS_MOTION2D
 #define BASE_COMMANDS_MOTION2D
 
-#include "base/Angle.hpp"
+#include "Angle.hpp"
 
 namespace base
 {

@@ -1,7 +1,7 @@
 #ifndef __BASE_SAMPLES_EVENT_HH
 #define __BASE_SAMPLES_EVENT_HH
 
-#include <base/Time.hpp>
+#include <Time.hpp>
 
 namespace base {
 namespace samples {

@@ -1,6 +1,6 @@
 #include "DepthMap.hpp"
 
-#include <base/Float.hpp>
+#include <Float.hpp>
 
 namespace base { namespace samples {
 

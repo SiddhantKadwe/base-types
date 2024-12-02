@@ -4,8 +4,8 @@
 #include <list>
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/samples/Sonar.hpp>
-#include <base/samples/RigidBodyState.hpp>
+#include <samples/Sonar.hpp>
+#include <samples/RigidBodyState.hpp>
 
 #include <osg/Node>
 #include <osg/Geometry>

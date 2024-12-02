@@ -1,5 +1,5 @@
 #include <boost/test/unit_test.hpp>
-#include <base/Temperature.hpp>
+#include <Temperature.hpp>
 
 using namespace std;
 using namespace base;

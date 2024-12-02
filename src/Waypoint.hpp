@@ -2,8 +2,8 @@
 #ifndef BASE_WAYPOINT_HH_
 #define BASE_WAYPOINT_HH_
 
-#include <base/Eigen.hpp>
-#include <base/Pose.hpp>
+#include <Eigen.hpp>
+#include <Pose.hpp>
 
 namespace base {
 /**

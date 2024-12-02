@@ -3,7 +3,7 @@
 #include "rice/Constructor.hpp"
 #include "rice/Enum.hpp"
 
-#include <base/geometry/Spline.hpp>
+#include <geometry/Spline.hpp>
 
 using namespace Rice;
 using base::geometry::SplineBase;

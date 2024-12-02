@@ -1,9 +1,9 @@
 #ifndef BASE_SAMPLES_RIGID_BODY_STATE_SE3_VECTOR_HPP
 #define BASE_SAMPLES_RIGID_BODY_STATE_SE3_VECTOR_HPP
 
-#include <base/NamedVector.hpp>
-#include <base/Time.hpp>
-#include <base/RigidBodyStateSE3.hpp>
+#include <NamedVector.hpp>
+#include <Time.hpp>
+#include <RigidBodyStateSE3.hpp>
 
 namespace base { namespace samples {
 

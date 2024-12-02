@@ -1,8 +1,8 @@
 #ifndef BASE_SAMPLES_WRENCH_HPP
 #define BASE_SAMPLES_WRENCH_HPP
 
-#include <base/Wrench.hpp>
-#include <base/Time.hpp>
+#include <Wrench.hpp>
+#include <Time.hpp>
 
 namespace base { namespace samples {
 

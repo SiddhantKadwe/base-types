@@ -1,7 +1,7 @@
 #ifndef BASE_JOINT_LIMIT_RANGE_HPP
 #define BASE_JOINT_LIMIT_RANGE_HPP
 
-#include <base/JointState.hpp>
+#include <JointState.hpp>
 
 namespace base
 {

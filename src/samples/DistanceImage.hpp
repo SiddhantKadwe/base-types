@@ -1,8 +1,8 @@
 #ifndef __BASE_SAMPLES_DISTANCE_IMAGE_H__
 #define __BASE_SAMPLES_DISTANCE_IMAGE_H__
 
-#include <base/Time.hpp>
-#include <base/Eigen.hpp>
+#include <Time.hpp>
+#include <Eigen.hpp>
 #include "Pointcloud.hpp"
 #include <vector>
 #ifndef Q_MOC_RUN

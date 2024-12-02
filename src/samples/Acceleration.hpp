@@ -1,8 +1,8 @@
 #ifndef BASE_SAMPLES_ACCELERATION_HPP
 #define BASE_SAMPLES_ACCELERATION_HPP
 
-#include <base/Acceleration.hpp>
-#include <base/Time.hpp>
+#include <Acceleration.hpp>
+#include <Time.hpp>
 
 namespace base { namespace samples {
 

@@ -4,7 +4,7 @@
  *  Created on: 24.10.2013
  *      Author: Steffen Planthaber
  *
- *  A collection of base/commands with timestamps, for use as command feedback and logging
+ *  A collection of commands with timestamps, for use as command feedback and logging
  *  (which command was executed when) or for supervising tasks.
  *
  * all definitions may be empty : "class Motion2D : public TimeStamped< commands::Motion2D >{};",

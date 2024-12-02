@@ -1,9 +1,9 @@
 #ifndef BASE_COMMANDS_LINEAR_ANGULAR_6D_COMMAND_HPP_
 #define BASE_COMMANDS_LINEAR_ANGULAR_6D_COMMAND_HPP_
 
-#include <base/Time.hpp>
-#include <base/Eigen.hpp>
-#include <base/Float.hpp>
+#include <Time.hpp>
+#include <Eigen.hpp>
+#include <Float.hpp>
 
 namespace base
 {

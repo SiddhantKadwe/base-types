@@ -2,8 +2,8 @@
 #ifndef BASE_SAMPLES_ORIENTEDBOUNDINGBOX_HPP_
 #define BASE_SAMPLES_ORIENTEDBOUNDINGBOX_HPP_
 
-#include <base/Pose.hpp>
-#include <base/samples/BoundingBox.hpp>
+#include <Pose.hpp>
+#include <samples/BoundingBox.hpp>
 
 namespace base {
 namespace samples {

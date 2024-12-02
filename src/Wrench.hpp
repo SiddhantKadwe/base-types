@@ -1,7 +1,7 @@
 #ifndef BASE_WRENCH_STATE_HPP
 #define BASE_WRENCH_STATE_HPP
 
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 
 namespace base {
 

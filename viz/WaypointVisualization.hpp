@@ -3,7 +3,7 @@
 
 #include <boost/noncopyable.hpp>
 #include <vizkit3d/Vizkit3DPlugin.hpp>
-#include <base/Waypoint.hpp>
+#include <Waypoint.hpp>
 
 namespace osg {
     class Group;

@@ -1,7 +1,7 @@
 #ifndef BASE_TWIST_HPP
 #define BASE_TWIST_HPP
 
-#include <base/Eigen.hpp>
+#include <Eigen.hpp>
 
 namespace base {
 

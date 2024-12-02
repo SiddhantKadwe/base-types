@@ -1,7 +1,7 @@
 #ifndef __BASE_SAMPLES_EVENT_ARRAY_HH
 #define __BASE_SAMPLES_EVENT_ARRAY_HH
 
-#include <base/samples/Event.hpp>
+#include <samples/Event.hpp>
 #include <vector>
 
 namespace base {

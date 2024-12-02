@@ -1,9 +1,9 @@
 #ifndef __BASE_SAMPLES_RIGID_BODY_STATE_HH
 #define __BASE_SAMPLES_RIGID_BODY_STATE_HH
 
-#include <base/Pose.hpp>
-#include <base/Time.hpp>
-#include <base/Float.hpp>
+#include <Pose.hpp>
+#include <Time.hpp>
+#include <Float.hpp>
 
 #include <Eigen/Core>
 #include <Eigen/LU>

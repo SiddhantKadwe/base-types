@@ -2,10 +2,10 @@
 #define BASE_JOINTSTRAJECTORY_HPP
 
 #include <vector>
-#include <base/JointState.hpp>
-#include <base/samples/Joints.hpp>
-#include <base/NamedVector.hpp>
-#include <base/Time.hpp>
+#include <JointState.hpp>
+#include <samples/Joints.hpp>
+#include <NamedVector.hpp>
+#include <Time.hpp>
 
 namespace base {
 

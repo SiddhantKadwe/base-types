@@ -1,49 +1,49 @@
 #define BOOST_TEST_MODULE BaseTypes
 #include <boost/test/unit_test.hpp>
 
-#include <base/Angle.hpp>
-#include <base/commands/Joints.hpp>
-#include <base/commands/Motion2D.hpp>
-#include <base/commands/Speed6D.hpp>
-#include <base/Deprecated.hpp>
-#include <base/Eigen.hpp>
-#include <base/Float.hpp>
-#include <base/JointState.hpp>
-#include <base/JointLimitRange.hpp>
-#include <base/JointLimits.hpp>
-#include <base/JointsTrajectory.hpp>
-#include <base/NamedVector.hpp>
-#include <base/Point.hpp>
-#include <base/Pose.hpp>
-#include <base/Pressure.hpp>
-//#include <base/samples/CompressedFrame.hpp>
-#include <base/samples/BodyState.hpp>
-#include <base/samples/BoundingBox.hpp>
-#include <base/samples/DepthMap.hpp>
-#include <base/samples/DistanceImage.hpp>
-#include <base/samples/Frame.hpp>
-#include <base/samples/IMUSensors.hpp>
-#include <base/samples/Joints.hpp>
-#include <base/samples/LaserScan.hpp>
-#include <base/samples/OrientedBoundingBox.hpp>
-#include <base/samples/Pointcloud.hpp>
-#include <base/samples/Pressure.hpp>
-#include <base/samples/RigidBodyAcceleration.hpp>
-#include <base/samples/RigidBodyState.hpp>
-#include <base/samples/SonarBeam.hpp>
-#include <base/samples/SonarScan.hpp>
-#include <base/TransformWithCovariance.hpp>
-#include <base/samples/Sonar.hpp>
-#include <base/samples/PoseWithCovariance.hpp>
-#include <base/Temperature.hpp>
-#include <base/Time.hpp>
-#include <base/TimeMark.hpp>
-#include <base/Trajectory.hpp>
-#include <base/Waypoint.hpp>
-#include <base/TwistWithCovariance.hpp>
+#include <Angle.hpp>
+#include <commands/Joints.hpp>
+#include <commands/Motion2D.hpp>
+#include <commands/Speed6D.hpp>
+#include <Deprecated.hpp>
+#include <Eigen.hpp>
+#include <Float.hpp>
+#include <JointState.hpp>
+#include <JointLimitRange.hpp>
+#include <JointLimits.hpp>
+#include <JointsTrajectory.hpp>
+#include <NamedVector.hpp>
+#include <Point.hpp>
+#include <Pose.hpp>
+#include <Pressure.hpp>
+//#include <samples/CompressedFrame.hpp>
+#include <samples/BodyState.hpp>
+#include <samples/BoundingBox.hpp>
+#include <samples/DepthMap.hpp>
+#include <samples/DistanceImage.hpp>
+#include <samples/Frame.hpp>
+#include <samples/IMUSensors.hpp>
+#include <samples/Joints.hpp>
+#include <samples/LaserScan.hpp>
+#include <samples/OrientedBoundingBox.hpp>
+#include <samples/Pointcloud.hpp>
+#include <samples/Pressure.hpp>
+#include <samples/RigidBodyAcceleration.hpp>
+#include <samples/RigidBodyState.hpp>
+#include <samples/SonarBeam.hpp>
+#include <samples/SonarScan.hpp>
+#include <TransformWithCovariance.hpp>
+#include <samples/Sonar.hpp>
+#include <samples/PoseWithCovariance.hpp>
+#include <Temperature.hpp>
+#include <Time.hpp>
+#include <TimeMark.hpp>
+#include <Trajectory.hpp>
+#include <Waypoint.hpp>
+#include <TwistWithCovariance.hpp>
 
 #ifdef SISL_FOUND
-#include <base/Trajectory.hpp>
+#include <Trajectory.hpp>
 #endif
 
 #include <Eigen/SVD>
@@ -993,7 +993,7 @@ BOOST_AUTO_TEST_CASE( angle_segment )
 
 }
 
-#include <base/Float.hpp>
+#include <Float.hpp>
 
 BOOST_AUTO_TEST_CASE( test_inf_nan )
 {
@@ -1456,7 +1456,7 @@ BOOST_AUTO_TEST_CASE(euler_rate_operations)
 }
 
 #ifdef SISL_FOUND
-#include <base/geometry/spline.h>
+#include <geometry/spline.h>
 BOOST_AUTO_TEST_CASE( spline_to_points )
 {
     std::vector<base::Vector3d> pointsIn;
