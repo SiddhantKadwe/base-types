@@ -6,10 +6,6 @@ find_package(Eigen3 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BASE_LOGGING REQUIRED base_logging)
 
-set(BOOST_ROOT /home/rsc/rsc/projects/libraries/dfki/dependancies/boost_1_82_0)
-set(BOOST_LIBRARYDIR ${BOOST_ROOT}/stage/lib)
-set(BOOST_INCLUDEDIR ${BOOST_ROOT})
-
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 
 # Define header and source files based on whether SISL is found
@@ -167,8 +163,8 @@ configure_file(base_types.pc.in ${CMAKE_BINARY_DIR}/base_types.pc @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/base_types.pc DESTINATION lib/pkgconfig)
 
 # Install headers
-install(FILES ${BASE_HEADERS_SRC} DESTINATION include/base_types/)
-install(FILES ${BASE_HEADERS_COMMANDS} DESTINATION include/base_types/commands/)
-install(FILES ${BASE_HEADERS_LOGGING} DESTINATION include/base_types/logging/)
-install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base_types/samples/)
-install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base_types/templates/)
+install(FILES ${BASE_HEADERS_SRC} DESTINATION include/base-types/)
+install(FILES ${BASE_HEADERS_COMMANDS} DESTINATION include/base-types/commands/)
+install(FILES ${BASE_HEADERS_LOGGING} DESTINATION include/base-types/logging/)
+install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base-types/samples/)
+install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base-types/templates/)
