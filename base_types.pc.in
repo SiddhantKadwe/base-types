@@ -6,7 +6,7 @@ includedir=${prefix}/include/base-types
 Name: base_types
 Description: Base types library for robotic applications
 Version: @PROJECT_VERSION@
-Requires: base-logging
+Requires: base_logging
 Requires.private: eigen3
 Libs: -L${libdir} -lbase_types -lboost_system -lboost_filesystem
 Cflags: -I${includedir} -I@BOOST_INCLUDEDIR@ -I@EIGEN3_INCLUDE_DIR@
