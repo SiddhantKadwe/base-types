@@ -1,6 +1,6 @@
 prefix=@CMAKE_INSTALL_PREFIX@
 exec_prefix=${prefix}
-includedir=${prefix}/include
+includedir=${prefix}/include/base-types-sisl
 
 Name: baseTypesSisl
 Version: 0.1

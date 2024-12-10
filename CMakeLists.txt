@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 project(base_types)
 
-find_package(SISL)
+# Find SISL
+find_path(SISL_INCLUDE_DIR sisl.h PATHS /usr/local/include)
+find_library(SISL_LIBRARY sisl PATHS /usr/local/lib)
+if (NOT SISL_INCLUDE_DIR OR NOT SISL_LIBRARY)
+    message(FATAL_ERROR "SISL not found. Please install SISL and provide paths.")
+endif()
+
 find_package(Eigen3 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BASE_LOGGING REQUIRED base_logging)
@@ -39,6 +45,8 @@ set(BASE_HEADERS_SRC
     src/TwistWithCovariance.hpp
     src/Waypoint.hpp
     src/Wrench.hpp
+    src/Spline.hpp
+    src/Trajectory.hpp
 )
 
 set(BASE_HEADERS_COMMANDS
@@ -107,6 +115,8 @@ set(BASE_SOURCES_SRC
     src/TwistWithCovariance.cpp
     src/Waypoint.cpp
     src/Wrench.cpp
+    src/Spline.cpp
+    src/Trajectory.cpp
 )
 
 set(BASE_SOURCES_COMMANDS
@@ -133,30 +143,31 @@ set(BASE_SOURCES_SAMPLES
 )
 
 # If SISL is found, add SISL-related files
-if(SISL_FOUND)
-    message(STATUS "SISL found: ${SISL_LIBRARIES}")
-    list(APPEND BASE_HEADERS_SRC BASE_HEADERS_COMMANDS BASE_HEADERS_LOGGING BASE_HEADERS_SAMPLES BASE_HEADERS_TEMPLATES Spline.hpp Trajectory.hpp)
-    list(APPEND BASE_SOURCES_SRC BASE_SOURCES_COMMANDS BASE_SOURCES_SAMPLES Spline.cpp Trajectory.cpp)
-endif()
+#if(SISL_FOUND)
+#message(STATUS "SISL found: ${SISL_LIBRARIES}")
+#list(APPEND BASE_HEADERS_SRC BASE_HEADERS_COMMANDS BASE_HEADERS_LOGGING BASE_HEADERS_SAMPLES BASE_HEADERS_TEMPLATES Spline.hpp Trajectory.hpp)
+#list(APPEND BASE_SOURCES_SRC BASE_SOURCES_COMMANDS BASE_SOURCES_SAMPLES Spline.cpp Trajectory.cpp)
+#endif()
 
 # Create the library
 add_library(base_types ${BASE_SOURCES_SRC} ${BASE_SOURCES_COMMANDS} ${BASE_SOURCES_SAMPLES} ${BASE_HEADERS_SRC} ${BASE_HEADERS_COMMANDS} ${BASE_HEADERS_LOGGING} ${BASE_HEADERS_SAMPLES} ${BASE_HEADERS_TEMPLATES})
 target_include_directories(base_types PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(base_types PUBLIC ${BOOST_INCLUDEDIR})
 target_include_directories(base_types PUBLIC ${BASE_LOGGING_INCLUDE_DIRS})
+target_include_directories(base_types PUBLIC ${SISL_INCLUDE_DIR})
 
 # Link with dependencies
 include_directories(${EIGEN3_INCLUDE_DIR})
 target_link_libraries(base_types PRIVATE ${BASE_LOGGING_LIBRARIES})
 target_link_libraries(base_types PUBLIC ${Boost_SYSTEM_LIBRARY} ${Boost_FILESYSTEM_LIBRARY})
 
-if(SISL_FOUND)
-    target_link_libraries(base_types PRIVATE ${SISL_LIBRARIES})
-    install(FILES ${CMAKE_SOURCE_DIR}/src/Spline.hpp
-        DESTINATION include/base/geometry)
-    configure_file(base_types-sisl.pc.in ${CMAKE_BINARY_DIR}/base_types-sisl.pc @ONLY)
-    install(FILES ${CMAKE_BINARY_DIR}/base_types-sisl.pc DESTINATION lib/pkgconfig)
-endif()
+#if(SISL_FOUND)
+target_link_libraries(base_types PRIVATE ${SISL_LIBRARIES})
+install(FILES ${CMAKE_SOURCE_DIR}/src/Spline.hpp
+    DESTINATION include/base-types/geometry)
+configure_file(base_types-sisl.pc.in ${CMAKE_BINARY_DIR}/base_types-sisl.pc @ONLY)
+install(FILES ${CMAKE_BINARY_DIR}/base_types-sisl.pc DESTINATION lib/pkgconfig)
+#endif()
 
 # Generate and install pkg-config files
 configure_file(base_types.pc.in ${CMAKE_BINARY_DIR}/base_types.pc @ONLY)
