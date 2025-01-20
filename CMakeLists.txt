@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(base_types)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 # Find SISL
 find_path(SISL_INCLUDE_DIR sisl.h PATHS /usr/local/include)
 find_library(SISL_LIBRARY sisl PATHS /usr/local/lib)
@@ -179,4 +181,6 @@ install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base_types/samples/)
 install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base_types/templates/)
 
 # Install library
+install(TARGETS base_types DESTINATION lib)
+
 install(TARGETS base_types DESTINATION lib)
