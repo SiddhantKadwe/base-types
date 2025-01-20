@@ -14,7 +14,7 @@ pkg_check_modules(BASE_LOGGING REQUIRED base_logging)
 
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 
-# Define header and source files based on whether SISL is found
+# Define header and source files
 set(BASE_HEADERS_SRC
     src/Acceleration.hpp
     src/Angle.hpp
@@ -142,40 +142,41 @@ set(BASE_SOURCES_SAMPLES
     src/samples/Temperature.cpp
 )
 
-# If SISL is found, add SISL-related files
-#if(SISL_FOUND)
-#message(STATUS "SISL found: ${SISL_LIBRARIES}")
-#list(APPEND BASE_HEADERS_SRC BASE_HEADERS_COMMANDS BASE_HEADERS_LOGGING BASE_HEADERS_SAMPLES BASE_HEADERS_TEMPLATES Spline.hpp Trajectory.hpp)
-#list(APPEND BASE_SOURCES_SRC BASE_SOURCES_COMMANDS BASE_SOURCES_SAMPLES Spline.cpp Trajectory.cpp)
-#endif()
+# Create the shared library
+add_library(base_types SHARED
+    ${BASE_SOURCES_SRC}
+    ${BASE_SOURCES_COMMANDS}
+    ${BASE_SOURCES_SAMPLES}
+)
 
-# Create the library
-add_library(base_types ${BASE_SOURCES_SRC} ${BASE_SOURCES_COMMANDS} ${BASE_SOURCES_SAMPLES} ${BASE_HEADERS_SRC} ${BASE_HEADERS_COMMANDS} ${BASE_HEADERS_LOGGING} ${BASE_HEADERS_SAMPLES} ${BASE_HEADERS_TEMPLATES})
-target_include_directories(base_types PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
-target_include_directories(base_types PUBLIC ${BOOST_INCLUDEDIR})
-target_include_directories(base_types PUBLIC ${BASE_LOGGING_INCLUDE_DIRS})
-target_include_directories(base_types PUBLIC ${SISL_INCLUDE_DIR})
+# Include directories
+target_include_directories(base_types PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${BOOST_INCLUDEDIR}
+    ${BASE_LOGGING_INCLUDE_DIRS}
+    ${SISL_INCLUDE_DIR}
+)
+
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 # Link with dependencies
-include_directories(${EIGEN3_INCLUDE_DIR})
 target_link_libraries(base_types PRIVATE ${BASE_LOGGING_LIBRARIES})
-target_link_libraries(base_types PUBLIC ${Boost_SYSTEM_LIBRARY} ${Boost_FILESYSTEM_LIBRARY})
-
-#if(SISL_FOUND)
-target_link_libraries(base_types PRIVATE ${SISL_LIBRARIES})
-install(FILES ${CMAKE_SOURCE_DIR}/src/Spline.hpp
-    DESTINATION include/base-types/geometry)
-configure_file(base_types-sisl.pc.in ${CMAKE_BINARY_DIR}/base_types-sisl.pc @ONLY)
-install(FILES ${CMAKE_BINARY_DIR}/base_types-sisl.pc DESTINATION lib/pkgconfig)
-#endif()
+target_link_libraries(base_types PUBLIC
+    ${Boost_SYSTEM_LIBRARY}
+    ${Boost_FILESYSTEM_LIBRARY}
+    ${SISL_LIBRARY}
+)
 
 # Generate and install pkg-config files
 configure_file(base_types.pc.in ${CMAKE_BINARY_DIR}/base_types.pc @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/base_types.pc DESTINATION lib/pkgconfig)
 
 # Install headers
-install(FILES ${BASE_HEADERS_SRC} DESTINATION include/base-types/)
-install(FILES ${BASE_HEADERS_COMMANDS} DESTINATION include/base-types/commands/)
-install(FILES ${BASE_HEADERS_LOGGING} DESTINATION include/base-types/logging/)
-install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base-types/samples/)
-install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base-types/templates/)
+install(FILES ${BASE_HEADERS_SRC} DESTINATION include/base_types/)
+install(FILES ${BASE_HEADERS_COMMANDS} DESTINATION include/base_types/commands/)
+install(FILES ${BASE_HEADERS_LOGGING} DESTINATION include/base_types/logging/)
+install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base_types/samples/)
+install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base_types/templates/)
+
+# Install library
+install(TARGETS base_types DESTINATION lib)
