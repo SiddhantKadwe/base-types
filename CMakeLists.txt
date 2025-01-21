@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(base_types)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 # Find SISL
 find_path(SISL_INCLUDE_DIR sisl.h PATHS /usr/local/include)
 find_library(SISL_LIBRARY sisl PATHS /usr/local/lib)
