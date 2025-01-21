@@ -1,12 +1,12 @@
 prefix=@CMAKE_INSTALL_PREFIX@
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
-includedir=${prefix}/include/base-types
+includedir=${prefix}/include/base_types
 
 Name: base_types
-Description: Base types library for robotic applications
+Description: Base types library with geometry and control primitives
 Version: @PROJECT_VERSION@
 Requires: base_logging
 Requires.private: eigen3
-Libs: -L${libdir} -lboost_system -lboost_filesystem
-Cflags: -I${includedir} -I@BOOST_INCLUDEDIR@ -I@EIGEN3_INCLUDE_DIR@
+Libs: -L${libdir} -lbase_types -lbase_logging -lsisl @Boost_SYSTEM_LIBRARY@ @Boost_FILESYSTEM_LIBRARY@
+Cflags: -I${includedir} -I${SISL_INCLUDE_DIR} -I${BASE_LOGGING_INCLUDE_DIRS} -I@BOOST_INCLUDEDIR@ -I@EIGEN3_INCLUDE_DIR@
