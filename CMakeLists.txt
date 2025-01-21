@@ -182,5 +182,3 @@ install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base_types/templates
 
 # Install library
 install(TARGETS base_types DESTINATION lib)
-
-install(TARGETS base_types DESTINATION lib)
