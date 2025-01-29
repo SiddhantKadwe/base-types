@@ -8,5 +8,5 @@ Description: Base types library for robotic applications
 Version: @PROJECT_VERSION@
 Requires: base_logging
 Requires.private: eigen3
-Libs: -L${libdir} -lboost_system -lboost_filesystem
-Cflags: -I${includedir} -I@BOOST_INCLUDEDIR@ -I@EIGEN3_INCLUDE_DIR@
+Libs: -L${libdir} -lbase_types -lbase_logging -lsisl @Boost_SYSTEM_LIBRARY@ @Boost_FILESYSTEM_LIBRARY@
+Cflags: -I${includedir} -I${SISL_INCLUDE_DIR} -I${BASE_LOGGING_INCLUDE_DIRS} -I@BOOST_INCLUDEDIR@ -I@EIGEN3_INCLUDE_DIR@
