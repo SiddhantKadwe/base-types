@@ -1,20 +1,40 @@
 cmake_minimum_required(VERSION 3.10)
-project(base_types)
+project(base VERSION 1.1 DESCRIPTION "Common types for ROCK systems")
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+find_package(Eigen3 REQUIRED)
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(BASE_LOGGING REQUIRED base-logging)
+
 # Find SISL
-find_path(SISL_INCLUDE_DIR sisl.h PATHS /usr/local/include)
-find_library(SISL_LIBRARY sisl PATHS /usr/local/lib)
-if (NOT SISL_INCLUDE_DIR OR NOT SISL_LIBRARY)
-    message(FATAL_ERROR "SISL not found. Please install SISL and provide paths.")
+option(USE_SISL "set to OFF to disable the usage of SISL." ON)
+if(USE_SISL)
+    find_library(SISL_LIBRARY sisl PATHS /usr/local/lib)
+    find_path(SISL_INCLUDE_DIR sisl.h PATHS /usr/local/include)
+    
+    if(NOT SISL_LIBRARY OR NOT SISL_INCLUDE_DIR)
+        message(FATAL_ERROR "The usage of SISL is requested, but the library could not be found."
+            " Either make sure SISL is installed, or disable the usage via"
+            " -DUSE_SISL=OFF")
+    else()
+        set(SISL_FOUND TRUE)
+    endif()
 endif()
 
-find_package(Eigen3 REQUIRED)
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(BASE_LOGGING REQUIRED base_logging)
-
-find_package(Boost COMPONENTS system filesystem REQUIRED)
+if(SISL_FOUND)
+    message(STATUS "SISL found: ${SISL_LIBRARIES}")
+    list(APPEND OPTIONAL_HPP
+        src/Spline.hpp
+        src/Trajectory.hpp
+    )
+    list(APPEND OPTIONAL_CPP
+        src/Spline.cpp
+        src/Trajectory.cpp
+    )
+endif()
 
 # Define header and source files
 set(BASE_HEADERS_SRC
@@ -47,8 +67,7 @@ set(BASE_HEADERS_SRC
     src/TwistWithCovariance.hpp
     src/Waypoint.hpp
     src/Wrench.hpp
-    src/Spline.hpp
-    src/Trajectory.hpp
+    ${OPTIONAL_HPP}
 )
 
 set(BASE_HEADERS_COMMANDS
@@ -117,8 +136,7 @@ set(BASE_SOURCES_SRC
     src/TwistWithCovariance.cpp
     src/Waypoint.cpp
     src/Wrench.cpp
-    src/Spline.cpp
-    src/Trajectory.cpp
+    ${OPTIONAL_CPP}
 )
 
 set(BASE_SOURCES_COMMANDS
@@ -145,40 +163,55 @@ set(BASE_SOURCES_SAMPLES
 )
 
 # Create the shared library
-add_library(base_types SHARED
+add_library(base-types SHARED
+    ${BASE_HEADERS_SRC}
+    ${BASE_HEADERS_COMMANDS}
+    ${BASE_HEADERS_LOGGING}
+    ${BASE_HEADERS_SAMPLES}
+    ${BASE_HEADERS_TEMPLATES}
     ${BASE_SOURCES_SRC}
     ${BASE_SOURCES_COMMANDS}
     ${BASE_SOURCES_SAMPLES}
 )
 
 # Include directories
-target_include_directories(base_types PUBLIC
+target_include_directories(base-types PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${BOOST_INCLUDEDIR}
     ${BASE_LOGGING_INCLUDE_DIRS}
-    ${SISL_INCLUDE_DIR}
-)
+    ${EIGEN3_INCLUDE_DIR}
+)    
 
-include_directories(${EIGEN3_INCLUDE_DIR})
+# include_directories()
 
 # Link with dependencies
-target_link_libraries(base_types PRIVATE ${BASE_LOGGING_LIBRARIES})
-target_link_libraries(base_types PUBLIC
+target_link_libraries(base-types PRIVATE ${BASE_LOGGING_LIBRARIES})
+target_link_libraries(base-types PUBLIC
     ${Boost_SYSTEM_LIBRARY}
     ${Boost_FILESYSTEM_LIBRARY}
-    ${SISL_LIBRARY}
 )
 
+if(SISL_FOUND)
+    target_include_directories(base-types PUBLIC
+        ${SISL_INCLUDE_DIR}
+    ) 
+    target_link_libraries(base-types PUBLIC
+        ${SISL_LIBRARY}
+    )
+    install(FILES ${CMAKE_SOURCE_DIR}/src/Spline.hpp
+            DESTINATION include/base/geometry)
+endif()
+
 # Generate and install pkg-config files
-configure_file(base_types.pc.in ${CMAKE_BINARY_DIR}/base_types.pc @ONLY)
-install(FILES ${CMAKE_BINARY_DIR}/base_types.pc DESTINATION lib/pkgconfig)
+configure_file(base-lib.pc.in ${CMAKE_BINARY_DIR}/base-lib.pc @ONLY)
+install(FILES ${CMAKE_BINARY_DIR}/base-lib.pc DESTINATION lib/pkgconfig)
 
 # Install headers
-install(FILES ${BASE_HEADERS_SRC} DESTINATION include/base-types/)
-install(FILES ${BASE_HEADERS_COMMANDS} DESTINATION include/base-types/commands/)
-install(FILES ${BASE_HEADERS_LOGGING} DESTINATION include/base-types/logging/)
-install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base-types/samples/)
-install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base-types/templates/)
+install(FILES ${BASE_HEADERS_SRC} DESTINATION include/base/)
+install(FILES ${BASE_HEADERS_COMMANDS} DESTINATION include/base/commands/)
+install(FILES ${BASE_HEADERS_LOGGING} DESTINATION include/base/logging/)
+install(FILES ${BASE_HEADERS_SAMPLES} DESTINATION include/base/samples/)
+install(FILES ${BASE_HEADERS_TEMPLATES} DESTINATION include/base/templates/)
 
 # Install library
-install(TARGETS base_types DESTINATION lib)
+install(TARGETS base-types DESTINATION lib)
