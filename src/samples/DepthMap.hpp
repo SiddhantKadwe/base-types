@@ -6,7 +6,7 @@
 
 #include <Angle.hpp>
 #include <Time.hpp>
-#include <base-logging/logging/Singleton.hpp>
+#include <base-logging/Singleton.hpp>
 
 #include <stdexcept>
 

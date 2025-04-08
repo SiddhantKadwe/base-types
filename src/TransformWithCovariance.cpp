@@ -271,7 +271,7 @@ std::ostream& operator<<(std::ostream& out, const TransformWithCovariance& trans
     Vector3d scaled_axis;
     AngleAxisd angle_axis (trans.orientation);
     scaled_axis = angle_axis.axis() * angle_axis.angle();
-    for (register unsigned short i=0; i<trans.getCovariance().rows(); ++i)
+    for (unsigned short i=0; i<trans.getCovariance().rows(); ++i)
     {
         if (i<3)
         {
@@ -281,7 +281,7 @@ std::ostream& operator<<(std::ostream& out, const TransformWithCovariance& trans
         {
             out<<std::fixed<<std::setprecision(5)<<scaled_axis[i-3]<<"\t|";
         }
-        for (register unsigned short j=0; j<trans.getCovariance().cols(); ++j)
+        for (unsigned short j=0; j<trans.getCovariance().cols(); ++j)
         {
             out<<std::fixed<<std::setprecision(5)<<trans.getCovariance().row(i)[j]<<"\t";
         }

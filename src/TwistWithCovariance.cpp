@@ -296,7 +296,7 @@ Eigen::Matrix< double, int(3), int(6) > TwistWithCovariance::crossJacobian(const
 std::ostream& operator<<(std::ostream& out, const TwistWithCovariance& twist)
 {
     /** cout the 6D twist vector (rotational first and linear second) with its associated covariance matrix **/
-    for (register unsigned short i=0; i<twist.getCovariance().rows(); ++i)
+    for (unsigned short i=0; i<twist.getCovariance().rows(); ++i)
     {
         if (i<3)
         {
@@ -306,7 +306,7 @@ std::ostream& operator<<(std::ostream& out, const TwistWithCovariance& twist)
         {
             out<<std::fixed<<std::setprecision(5)<<twist.rot[i-3]<<"\t|";
         }
-        for (register unsigned short j=0; j<twist.getCovariance().cols(); ++j)
+        for (unsigned short j=0; j<twist.getCovariance().cols(); ++j)
         {
             out<<std::fixed<<std::setprecision(5)<<twist.getCovariance().row(i)[j]<<"\t";
         }
